@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/widget_background"
+    android:background="#FFFFFF">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <ImageView
+            android:id="@+id/widget_refresh"
+            android:src="@mipmap/icon"            
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="10dp" />
+        <TextView
+            android:text="Xamarin Widget"
+            android:textColor="#FF000000"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/widget_listview"
+        android:divider="#00FFFFFF"
+        android:dividerHeight="1px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:model="clr-namespace:Sample.Models"
+             mc:Ignorable="d"
+             Title="Xamarin books"
+             x:Class="Sample.Views.MainPage">
+    
+    <CollectionView ItemSizingStrategy="MeasureFirstItem" ItemsSource="{Binding Books}">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Span="2" Orientation="Vertical" HorizontalItemSpacing="4" VerticalItemSpacing="4" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:WebBook">
+                <StackLayout Spacing="0" CompressedLayout.IsHeadless="true" HeightRequest="120">
+		            <Image VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+		                            Aspect="AspectFit" InputTransparent="true" Source="{Binding Thumbnail,Mode=OneTime}" />
+		            <Label HeightRequest="40" LineBreakMode="TailTruncation" MaxLines="2" Text="{Binding Title}" VerticalOptions="End" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="9" Padding="10,6,10,0" />
+		        </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>
